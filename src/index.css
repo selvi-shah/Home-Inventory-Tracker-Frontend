@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  background: #EFEEE6;
+  color: #2B2B26;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button, input {
+  font-family: inherit;
+}

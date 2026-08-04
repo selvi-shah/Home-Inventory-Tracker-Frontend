@@ -1,0 +1,243 @@
+.page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+
+
+
+.titles {
+  max-width: 550px;
+  margin: 40px auto 20px auto; /* Centers the text alignment on your page */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Small top text badge */
+.titles .subtitle {
+  color: #dc3545; /* Vibrant red accent */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Main Display Title */
+.titles h1 {
+  color: #8b0000; /* Deep red branding */
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Informational Subtext description */
+.titles .description {
+  color: #6c757d; /* Clean slate grey */
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.inventory-card {
+  max-width: 550px;
+  margin: 0 auto 40px auto; /* Aligns perfectly with the HeroSection text */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+
+/* Form Container */
+.inventory-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Horizontal Row for Inputs */
+.input-group-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Proportional widths: Item name takes 70%, Quantity takes 30% */
+.name-field {
+  flex: 7;
+}
+
+.qty-field {
+  flex: 3;
+}
+
+/* Text & Number Inputs styling */
+.inventory-form input[type="text"],
+.inventory-form input[type="number"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fbfbfb;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus glow on text fields */
+.inventory-form input:focus {
+  border-color: #dc3545; /* Crimson theme border */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.15);
+}
+
+/* Primary Action Button */
+.btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-sizing: border-box;
+}
+
+/* Button Hover State */
+.btn:hover:not(:disabled) {
+  background-color: #bd2130;
+}
+
+/* Button Click Press Effect */
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Locked loading state */
+.btn:disabled {
+  background-color: #e2a0a6;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Container layout to center your table on the screen */
+table {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 50px auto; /* Perfectly centers table below form card */
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden; /* Keeps round corners crisp */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  font-family: inherit;
+}
+
+/* Table Header Formatting */
+thead {
+  background-color: #fcfcfc;
+  border-bottom: 2px solid #eaeaea;
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Status Filter Column Header Wrapper */
+.status-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Customized Filter Dropdown Select Menu */
+.status-dropdown {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #495057;
+  background-color: #ffffff;
+  border: 1.5px solid #dcdcdc;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Filter Dropdown Hover & Focus Glow */
+.status-dropdown:hover {
+  border-color: #bc2130;
+}
+
+.status-dropdown:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+/* Table Body Cell Formatting */
+tbody tr {
+  border-bottom: 1px solid #f1f1f1;
+  transition: background-color 0.15s ease;
+}
+
+/* Alternating zebra stripes for readability */
+tbody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+/* Cell hover highlight line effect */
+tbody tr:hover {
+  background-color: #fdf2f3; /* Super soft red background tint on hover */
+}
+
+td {
+  padding: 16px;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+/* Bold formatting specifically for the Item Names */
+td:first-child {
+  font-weight: 500;
+}
+
+/* Accent font formatting specifically for the Quantities */
+td:nth-child(2) {
+  font-variant-numeric: tabular-nums; /* Prevents text shifting layout with numbers */
+  font-weight: 600;
+  color: #495057;
+}
+
+.text-in-stock {
+  color: #198754; /* Clean emerald green */
+  font-weight: 600;
+}
+
+/* Color style when an item is sold out */
+.text-out-of-stock {
+  color: #dc3545; /* Darker red matching your branding theme */
+  font-weight: 600;
+}
