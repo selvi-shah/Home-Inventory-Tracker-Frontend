@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import '../App.css';
 import axios from "axios";
+import { toast } from "react-toastify";
 
-function AddItem() {
+function AddItem({refresh, setRefresh}) {
 
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -17,9 +18,10 @@ function AddItem() {
         setLoading(true)
         try {
             const response = await axios.post("http://localhost:3000/add-item", {name, quantity})
-            console.log(response.data)
+            setRefresh(prev => !prev);
             setName('')
             setQuantity('')
+            toast.success("Item added successfully")
         } catch (error) {
             console.log(error)
         } finally {
