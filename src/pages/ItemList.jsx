@@ -61,6 +61,15 @@ function ItemList({refresh}) {
         }
     }
 
+    async function updateQuantity(id, quantity) {
+        try {
+            await axios.patch(`http://localhost:3000/items/${id}`, {quantity})
+            listItems()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     
 
   return (
@@ -91,12 +100,43 @@ function ItemList({refresh}) {
                 {filteredItems.map((item) => (
                     <tr key={item._id}>
                         <td>{item.name}</td>
-                        <td>{item.quantity}</td>
+                        <td>
+  <div className="quantity-picker">
+    <button 
+      className="quantity-btn"
+      onClick={() => {
+        if (item.quantity > 0) {
+          updateQuantity(item._id, item.quantity - 1);
+        }
+      }}
+      disabled={item.quantity <= 0} /* Disables button visually & functionally */
+    >
+      -
+    </button>
+    
+    <span className="quantity-value">{item.quantity}</span>
+    
+    <button 
+      className="quantity-btn"
+      onClick={() => updateQuantity(item._id, item.quantity + 1)}
+    >
+      +
+    </button>
+  </div>
+</td>
+
                         <td className={item.quantity > 0 ? "text-in-stock" : "text-out-of-stock"}>
                         {item.quantity > 0 ? "In Stock" : "Out of Stock"}</td>
 
                         <td>
-                            <button className="btn-delete" onClick={() => deleteItem(item._id)}>Delete</button>
+                            <button className="btn-delete-icon" onClick={() => deleteItem(item._id)} title="Delete Item">
+                                <svg xmlns="http://w3.org" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="trash-svg">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                            </button>
                         </td>
                     </tr>
                 ))}

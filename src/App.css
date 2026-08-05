@@ -322,3 +322,84 @@ td:nth-child(2) {
   transform: scale(0.95);
 }
 
+/* Circular Icon Button Wrapper */
+.btn-delete-icon {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 50%; /* Makes the hover background a perfect circle */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+/* Trash Icon SVG Dimensions and Base Color */
+.trash-svg {
+  width: 18px;
+  height: 18px;
+  color: #6c757d; /* Muted gray by default so it doesn't look aggressive */
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover State - Soft red background ring and bright crimson icon color */
+.btn-delete-icon:hover {
+  background-color: #f8d7da; /* Light crimson tinted circle background */
+}
+
+.btn-delete-icon:hover .trash-svg {
+  color: #dc3545; /* Vibrant alert crimson for the icon */
+}
+
+/* Active Click Feedback */
+.btn-delete-icon:active {
+  transform: scale(0.92);
+}
+
+/* Quantity Picker Container - Clean & Borderless */
+.quantity-picker {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent; /* Removes the grey background */
+  border: none;                  /* Removes the outer wrapper box border */
+  padding: 0;                    /* Removes inner spacing */
+  gap: 8px;                      /* Adds clean spacing between buttons and text */
+}
+
+/* Control Buttons (Plus and Minus) - Keeps them visible and structured */
+.quantity-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;     /* Puts individual boxes around just the buttons */
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover state for buttons */
+.quantity-btn:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* Quantity Number Display */
+.quantity-value {
+  display: inline-block;
+  min-width: 24px;               /* Keeps numbers centered without layout shifting */
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  user-select: none;
+}
+
